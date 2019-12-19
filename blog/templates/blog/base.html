@@ -1,28 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<{% load static %}
+{% load static %}
 <html>
+<style>
+    nav {
+  float: left;
+  width: 15%;
+  height: 450px;
+  background: #ccc;
+  padding: 20px;
+
+}
+ .menu{
+ font-size:30px;
+ }
+
+
+</style>
     <head>
-        <title>Django blog</title>
+        <title>Meu Curriculo</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
+        <div class="page-header" style="margin-bottom:0px; background: #0000ff;">
             {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
-        <h1><a href="/">Django Blog</a></h1>
+        <h1><a href="/">Meu Curriculum</a> </h1>
     </div>
+    <section>
+  <nav style="height: 100%; position: fixed">
+    <ul>
+      <li><a class="menu" style="color:#0000ff" href="#">Meus Atributos</a></li>
+
+    </ul>
+  </nav>
     <div class="content container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-10 col-md-offset-2">
+
+            <div class="col-md-8" style="font-size:30px ; font-family:verdana "> Luiz Henrique De Carvalho Luqueta</div>
+            <div class="col-md-2" style="font-size:20px ; font-family:verdana; color:#666666"> 20 anos</div>
+            <div class="col-md-8" style="font-size:25px ; "> Analista De Sistemas E Desenvolvedor</div>
+            <div class="col-md-2" style="font-size:15px; color:#666666 "> TEL:(11)97286-5607(WHATSAPP)</div>
+            <div class="col-md-8" style="font-size:20px "> contato.luqueta@gmail.com</div>
+
+
+            <div class="col-md-6">
+                <div class="col-md-12" style="font-size:20px "> <h1 style="font-family:verdana; margin-top:20px; margin-bottom:0">HABILIDADES: </h1></div>
+                <div class="col-md-12" style="font-size:15px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-Python </h3></div>
+                <div class="col-md-12" style="font-size:15px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-CSS </h3></div>
+                <div class="col-md-12" style="font-size:15px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-Banco De Dados</h3></div>
+                <div class="col-md-12" style="font-size:15px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-HTML</h3></div>
+                <div class="col-md-12" style="font-size:15px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-Django</h3></div>
+            </div>
+
+
+                 <div class="col-md-4">
+                     <div class="col-md-12" style="font-size:20px "><h2 style="font-family:verdana;">Formação:</h2></div>
+                     <div class="col-md-12" style="font-size:20px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-Instituto Maua de Tecnologia: Engenharia Mecanica</h3></div>
+                     <div class="col-md-12" style="font-size:20px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0"></h3></div>
+                     <div class="col-md-12" style="font-size:20px "><h3 style="font-family:verdana; margin-top:0px; margin-bottom:0">-Ensino Medio Completo</h3></div>
+                 </div>
+
+
             {% block content %}
             {% endblock %}
             </div>
-        </div>
     </div>
     </body>
 </html>
